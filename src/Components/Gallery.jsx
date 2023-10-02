@@ -1,12 +1,12 @@
 import GalleryItem from "./GalleryItem"
 
 export default function Gallery(props) {
+    const display = props.data.map((item, index) =>
+     <GalleryItem item={item} index={index} />)
+
     return (
         <div>
-            <GalleryItem />
-            <GalleryItem />
-            <GalleryItem />
-            <GalleryItem />
+            {display}
         </div>    
     )
 }
