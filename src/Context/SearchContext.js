@@ -4,7 +4,7 @@ export const SearchContext = createContext({
     term: '',
     handleSearch: () => {}
 })
-matchMedia
+
 
 
 

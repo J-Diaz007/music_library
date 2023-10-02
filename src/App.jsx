@@ -1,8 +1,10 @@
 import './App.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Gallery from "./Components/Gallery.jsx"
 import SearchBar from "./Components/SearchBar.jsx"
-import { DataContext } from "./Context/DataContext"
+import { DataContext } from "./Context/DataContext.js"
+import { SearchContext } from "./Context/SearchContext.js"
+
 
 const API_URL = 'https://itunes.apple.com/search?term='
 
@@ -10,6 +12,7 @@ function App() {
   let [search, setSearch] = useState("")
   let [data, setData] = useState([])
   let [message, setMessage] = useState("Search for Music!")
+  let searchInput = useRef('')
 
   useEffect(() => {
     if(search) {
@@ -34,7 +37,12 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar handleSearch={handleSearch} />
+      <SearchContext.Provider value={{
+          term: searchInput,
+          handleSearch: handleSearch
+      }}>
+        <SearchBar />
+      </SearchContext.Provider>
       {message}
       <DataContext.Provider value={data} >
         <Gallery />
