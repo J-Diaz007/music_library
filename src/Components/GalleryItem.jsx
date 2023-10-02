@@ -23,7 +23,7 @@ export default function GalleryItem(props) {
 
     const simpleView = () => {
         return (
-            <div>
+            <div style={simpleStyle}>
                 <h3>{props.item.trackName}</h3>
                 <h4>{props.item.collectionName}</h4>
             </div>
@@ -32,7 +32,7 @@ export default function GalleryItem(props) {
 
     const detailView = () => {
         return (
-            <div>
+            <div style={detailStyle}>
                 <h2>{props.item.trackName}</h2>
                 <h3>{props.item.collectionName}</h3>
                 <h4>{props.item.primaryGenreName}</h4>
