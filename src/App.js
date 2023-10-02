@@ -13,7 +13,12 @@ function App() {
       document.title = `${search} Music`
       const response = await fetch('https://itunes.apple.com/search?term=the%20grateful%20dead')
       const resData = await response.json()
-      setData(resData)
+      if (resData.results.length) {
+        setData(resData.results)
+      } else {
+        setMessage('Not found 😞')
+      }
+      
     }
   }, [])
 
