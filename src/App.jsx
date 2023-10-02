@@ -1,7 +1,8 @@
 import './App.css';
-import { useEffect, useState } from 'react';
-import Gallery from "./Components/Gallery.jsx";
-import SearchBar from "./Components/SearchBar.jsx";
+import { useEffect, useState } from 'react'
+import Gallery from "./Components/Gallery.jsx"
+import SearchBar from "./Components/SearchBar.jsx"
+import { DataContext } from "./Context/DataContext"
 
 const API_URL = 'https://itunes.apple.com/search?term='
 
@@ -35,7 +36,9 @@ function App() {
     <div className="App">
       <SearchBar handleSearch={handleSearch} />
       {message}
-      <Gallery data={data} />
+      <DataContext.Provider value={data} >
+        <Gallery />
+      </DataContext.Provider>  
     </div>
   );
 }
