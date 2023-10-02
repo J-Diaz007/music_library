@@ -1,12 +1,12 @@
 import GalleryItem from "./GalleryItem"
 
-export default function Gallery() {
+export default function Gallery(props) {
     return (
         <div>
-            <h1>Gallery</h1>
-            <h1>Gallery</h1>
-            <h1>Gallery</h1>
-            <h1>Gallery</h1>
+            <GalleryItem />
+            <GalleryItem />
+            <GalleryItem />
+            <GalleryItem />
         </div>    
     )
 }
