@@ -1,6 +1,6 @@
 import './App.css';
-import Gallery from ".Components/Gallery.jsx"
-import SearchBar from ".Components/SearchBar.jsx"
+import Gallery from "./Components/Gallery.jsx"
+import SearchBar from "./Components/SearchBar.jsx"
 
 function App() {
   return (
