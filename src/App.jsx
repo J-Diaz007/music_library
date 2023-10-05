@@ -5,14 +5,12 @@ import SearchBar from "./Components/SearchBar.jsx"
 import { DataContext } from "./Context/DataContext.js"
 import { SearchContext } from "./Context/SearchContext.js"
 
-
-const API_URL = 'https://itunes.apple.com/search?term='
-
 function App() {
-  let [search, setSearch] = useState("")
   let [data, setData] = useState([])
   let [message, setMessage] = useState("Search for Music!")
   let searchInput = useRef('')
+
+  const API_URL = 'https://itunes.apple.com/search?term='
 
   const handleSearch = (e, term) => {
     e.preventDefault()
