@@ -14,12 +14,6 @@ function App() {
   let [message, setMessage] = useState("Search for Music!")
   let searchInput = useRef('')
 
-  useEffect(() => {
-    if(search) {
-
-    }
-  }, [search])
-
   const handleSearch = (e, term) => {
     e.preventDefault()
     const fetchData = async () => {
