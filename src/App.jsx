@@ -23,8 +23,8 @@ function App() {
   const handleSearch = (e, term) => {
     e.preventDefault()
     const fetchData = async () => {
-      document.title = `${search} Music`
-      const response = await fetch(API_URL + search)
+      document.title = `${term} Music`
+      const response = await fetch(API_URL + term)
       const resData = await response.json()
       if (resData.results.length) {
         setData(resData.results)
