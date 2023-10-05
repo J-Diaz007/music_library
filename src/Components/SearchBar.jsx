@@ -2,10 +2,12 @@ import { SearchContext } from '../Context/SearchContext.js'
 import { useContext } from 'react'
 
 export default function SearchBar() {
+    const {term, handleSearch} = useContext(SearchContext)
+
     return (
-        <form onSubmit={e => handleSearch(e, searchTerm)}>
-            <input type="text" placeholder='Enter a search term' ref={term}/>
-            <input type="submit" />
+        <form>
+            <input type="text" placeholder='Enter a search term' ref={term} />
+            <input type="submit" onClick={e => handleSearch(e, term)} />
         </form>
     )
 }
