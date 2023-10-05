@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 
 export default function ArtistView() {
-    const [ artistData, setArtistData] = useState([])
+    const [ artistData, setArtistData ] = useState([])
 
     return(
         <div>

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 
 export default function AlbumView() {
-    const [ albumData, setAlbumData] = useState([])
+    const [ albumData, setAlbumData ] = useState([])
 
     return(
         <div>
