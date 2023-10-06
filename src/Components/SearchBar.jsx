@@ -6,7 +6,7 @@ export default function SearchBar() {
 
     return (
         <form>
-            <input type="text" placeholder='Enter a search term' ref={term} />
+            <input type="text" placeholder='Enter a search term' />
             <input type="submit" onClick={e => handleSearch(e, term.current.value)} />
         </form>
     )
