@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function GalleryItem(props) {
+export default function GalleryItem(props){
     let [view, setView] = useState(false)
 
     const simpleStyle = {
@@ -20,7 +20,7 @@ export default function GalleryItem(props) {
         'backgroundRepeat': 'no-repeat',
         'backgroundSize': 'cover',
         'color': 'yellow'
-    }    
+    }
 
     const simpleView = () => {
         return (
@@ -52,15 +52,11 @@ export default function GalleryItem(props) {
     }
 
     return (
-        <div onClick={() => setView(!view)}
-        style={{'display': 'inline-block'}}>
-        
+        <div onClick={() =>setView(!view)} style={{'display': 'inline-block'}}>
             {/* This simple ternary shows the simple view when 'view' is false! */}
             {view ? detailView() : simpleView()}
-
         </div>
     )
-
 }
 
 
