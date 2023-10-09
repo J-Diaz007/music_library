@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 
 export default function ArtistView() {
+    const navigate = useNavigate()
     const { id } = useParams()
     const [ artistData, setArtistData ] = useState([])
     
@@ -29,8 +30,13 @@ export default function ArtistView() {
 
     return (
         <div>
-            {artistData.length > 0 ? <h2>{artistData[0].artistName}</h2> : <h2>Loading...</h2>}
+            <h2>{artistData.length ? artistData[0].artistName : 'Loading...'}</h2>
             {renderAlbums}
+            <div>
+				<button onClick= {() => navigate(-1)}>Back</button>
+				&nbsp; &nbsp;|&nbsp;&nbsp;
+				<button onClick= {() => navigate('/')}>Home</button>
+			</div>
         </div>
     )
 }
