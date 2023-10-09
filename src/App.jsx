@@ -4,6 +4,7 @@ import { createResource as fetchData } from './helper';
 
 import Gallery from "./Components/Gallery.jsx";
 import SearchBar from "./Components/SearchBar.jsx";
+import Spinner from "./Components/Spinner.jsx"
 
 
 const API_URL = 'https://itunes.apple.com/search?term='
@@ -30,7 +31,7 @@ function App() {
   const renderGallery = () => {
     if(data){
         return (
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<Spinner />}>
                 <Gallery data={data} />
             </Suspense>
         )
