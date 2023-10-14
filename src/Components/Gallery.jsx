@@ -8,10 +8,12 @@ export default function Gallery() {
 
     const display = data.map((item, index) =>
      <GalleryItem key={index} item={item} />)
-
+     
     return (
         <div>
             {display}
-        </div>    
+        </div>
     )
 }
+
+
